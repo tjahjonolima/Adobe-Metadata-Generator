@@ -1,4 +1,4 @@
-const CACHE = "amg-v1";
+const CACHE = "amg-v3";
 self.addEventListener("install", e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(["./","index.html","style.css","app.js","manifest.json"])));
 });
