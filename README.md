@@ -1,0 +1,1 @@
+# Adobe-Metadata-Generator
