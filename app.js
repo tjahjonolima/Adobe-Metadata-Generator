@@ -22,12 +22,41 @@ runBtn.onclick = async ()=>{
   const files = [...filesEl.files];
   if(!files.length){ alert("Select images first"); return; }
   resEl.innerHTML = "Processing…";
-  // DEMO MODE (offline): metadata dummy sesuai aturan kamu
-  // Ganti blok ini saat AI backend siap.
-  const rows = files.map((f,i)=> mockMeta(f.name, presetEl.value));
+runBtn.onclick = async ()=>{
+  const files = [...filesEl.files];
+  if(!files.length){ alert("Select images first"); return; }
+
+  resEl.innerHTML = "Processing…";
+  const rows = [];
+
+  for (const file of files) {
+    const formData = new FormData();
+    formData.append("image", file);
+    formData.append("preset", presetEl.value);
+
+    try {
+      const resp = await fetch(API_URL, {
+        method: "POST",
+        body: formData
+      });
+
+      if (!resp.ok) {
+        throw new Error("Server error: " + resp.status);
+      }
+
+      const data = await resp.json();
+      rows.push(data);
+
+    } catch (err) {
+      console.error(err);
+      alert("Failed to process: " + file.name);
+    }
+  }
+
   currentRows = rows;
   render(rows);
   saveHistory(rows);
+};
 };
 
 copyBtn.onclick = ()=>{
