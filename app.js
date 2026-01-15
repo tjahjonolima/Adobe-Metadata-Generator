@@ -82,13 +82,15 @@ function renderHistory(){
 
 // --- Mock generator (Adobe-safe, 10 keyword noun-only) ---
 function mockMeta(filename, preset){
-  const base = {
+  const presets = {
+    none: ["image","concept","subject","object","detail","light","shadow","background","texture","composition"],
     valentine: ["romance","heart","rose","dessert","chocolate","candle","shadow","light","table","gift"],
     surreal: ["concept","dream","figure","mirror","city","landscape","contrast","symbol","light","space"],
     food: ["food","dish","plate","ingredient","texture","steam","light","shadow","kitchen","table"],
     business: ["business","office","team","meeting","document","laptop","light","desk","strategy","growth"]
-  }[preset];
+  };
 
+  const base = presets[preset] || presets.none;
   return {
     filename,
     title: "Adobe Stock–ready image with cinematic composition",
