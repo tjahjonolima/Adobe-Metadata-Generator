@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adobe Metadata Generator</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Adobe Metadata Generator</h1>
+    <p>Batch • CSV • Presets • Adobe Stock–safe</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <input id="files" type="file" accept="image/*" multiple />
+      <div class="row">
+        <label>Preset</label>
+        <select id="preset">
+          <option value="valentine">Valentine</option>
+          <option value="surreal">Surreal</option>
+          <option value="food">Food</option>
+          <option value="business">Business</option>
+        </select>
+      </div>
+      <button id="run">Generate (Batch)</button>
+    </section>
+
+    <section class="card">
+      <h2>Results</h2>
+      <div id="results"></div>
+      <div class="actions">
+        <button id="copy">Copy</button>
+        <button id="csv">Download CSV</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>History</h2>
+      <div id="history"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
