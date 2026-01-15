@@ -3,7 +3,7 @@ if ('serviceWorker' in navigator) navigator.serviceWorker.register('service-work
 
 // --- Config (AI endpoint placeholder) ---
 // Saat backend AI siap, ganti API_URL ke endpoint kamu.
-const API_URL = "https://example.com/analyze-batch"; // placeholder
+const API_URL = "https://6c043263-9ae7-4cbc-a50b-079d1bea7ee3-00-1kqd6tf9p3518.sisko.replit.dev/"; // placeholder
 
 const filesEl = document.getElementById('files');
 const presetEl = document.getElementById('preset');
